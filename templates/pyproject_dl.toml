@@ -1,0 +1,46 @@
+# Template pour projets deep learning (PyTorch)
+# Usage : copier dans nom-projet/, renommer en pyproject.toml, adapter name/description
+#         puis : uv sync
+# Note : torch est lourd (~2 Go) — prévoir le temps de téléchargement au premier uv sync
+#
+# MLflow : serveur permanent à http://127.0.0.1:5000 (toujours actif, ne pas le démarrer)
+#   Convention de nommage des expériences : "nom-projet/nom-experience"
+#   Exemple : mlflow.set_tracking_uri("http://127.0.0.1:5000")
+#             mlflow.set_experiment("seq-classifier/cnn-promoter-v1")
+
+[project]
+name = "nom-projet"
+version = "0.1.0"
+description = "Description courte du projet"
+requires-python = ">=3.11"
+dependencies = [
+    "torch>=2.2",
+    "numpy>=1.26",
+    "matplotlib>=3.8",
+    "scikit-learn>=1.4",
+    "biopython>=1.83",
+    "tqdm>=4.66",
+    "mlflow>=2.13",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.4",
+    "jupyter>=1.0",
+]
+
+# MLflow lit MLFLOW_TRACKING_URI depuis l'environnement — défini dans .env à la racine du projet.
+# uv charge automatiquement .env au lancement. Créer le fichier avec :
+#   echo 'MLFLOW_TRACKING_URI=http://127.0.0.1:5000' > .env
+
+[tool.pytest.ini_options]
+testpaths = ["subjects"]
+python_files = ["test_*.py"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

@@ -1,0 +1,65 @@
+# Environnement local
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.so
+
+# uv
+.uv/
+# uv.lock est versionné intentionnellement (reproductibilité)
+
+# C++
+*.o
+*.a
+*.out
+a.out
+cmake-build-*/
+.cache/
+*.dSYM/
+
+# Rust
+target/
+
+# Données biologiques potentiellement lourdes
+*.fastq.gz
+*.fq.gz
+*.bam
+*.bam.bai
+*.vcf.gz
+*.bcf
+*.cram
+data/raw/
+data/large/
+# Les petits fichiers .fastq/.fasta de test restent versionnés
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Modèles entraînés (potentiellement très lourds)
+*.pt
+*.pth
+*.ckpt
+checkpoints/
+runs/
+wandb/
