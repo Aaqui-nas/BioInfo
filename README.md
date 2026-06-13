@@ -10,7 +10,8 @@ Portfolio de bioinformatique construit sur l'année 2026. Objectif : préparer u
 
 | # | Nom | Technos | Thème | Statut |
 |---|-----|---------|-------|--------|
-| 1 | [Aligneur de séquences](sequence-aligner/) | Python | Alignement pairwise ADN (NW, SW, BLOSUM, gaps affines) | En cours |
+| 1 | [Aligneur de séquences](sequence-aligner/) | Python | Alignement pairwise ADN (NW, SW, BLOSUM, gaps affines) | Terminé |
+| 2 | [Phylogénomique computationnelle](phylo-builder/) | Python | Matrices de distance, UPGMA, NJ, bootstrap | En cours |
 
 ---
 
@@ -21,7 +22,7 @@ Portfolio de bioinformatique construit sur l'année 2026. Objectif : préparer u
 | Phase | Période | Projet | Orientation | Compétences clés |
 |-------|---------|--------|-------------|-----------------|
 | 1 | 2026 | [Aligneur de séquences](sequence-aligner/) | Algorithmique | PD, ALI, MST |
-| 2 | — | *(à définir)* | Algorithmique / Stats | — |
+| 2 | 2026 | [Phylogénomique computationnelle](phylo-builder/) | Algorithmique / Stats | PHY, STA |
 | 3 | — | *(à définir)* | Deep Learning | — |
 | 4 | — | *(à définir)* | Intégrateur | — |
 

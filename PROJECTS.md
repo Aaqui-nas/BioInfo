@@ -3,6 +3,7 @@
 | # | Nom | Dossier | Technos | Description | TPs total | TP en cours | Temps estimé | Temps réel | Dépend de | Statut |
 |---|-----|---------|---------|-------------|-----------|-------------|-------------|------------|-----------|--------|
 | 1 | Aligneur de séquences | `sequence-aligner/` | Python | Alignement pairwise ADN : NW, SW, BLOSUM, gaps affines | 6 | TP06 | 22–32 h | ~3h50 | aucun | Terminé |
+| 2 | Phylogénomique computationnelle | `phylo-builder/` | Python | Matrices de distance, UPGMA, Neighbor-Joining, bootstrap | 6 | TP01 | 19–27 h | — | aucun | En cours |
 
 ---
 

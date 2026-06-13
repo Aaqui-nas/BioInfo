@@ -96,9 +96,9 @@ graph LR
     classDef covered fill:#4caf50,stroke:#388e3c,color:#fff
     classDef partial fill:#ff9800,stroke:#f57c00,color:#fff
 
-    class PD,ALI,MST covered
-    class FMT,BIO_BASE,STA partial
-    class SC,GR,HEU,MOT,ASS,ANN,PHY,RNA,HMM,ENC,CNN,RNN,TRF,SSL,CPP,CMP,PAR,SWE unset
+    class PD,ALI,MST,PHY,STA covered
+    class FMT,BIO_BASE partial
+    class SC,GR,HEU,MOT,ASS,ANN,RNA,HMM,ENC,CNN,RNN,TRF,SSL,CPP,CMP,PAR,SWE unset
 ```
 
 ---
@@ -117,12 +117,12 @@ graph LR
 | MOT | Recherche de motifs biologiques | Biologie computationnelle | Haute | — |
 | ASS | Assemblage de génomes | Biologie computationnelle | Haute | — |
 | ANN | Annotation génomique | Biologie computationnelle | Moyenne | — |
-| PHY | Phylogénétique computationnelle | Biologie computationnelle | Moyenne | — |
+| PHY | Phylogénétique computationnelle | Biologie computationnelle | Moyenne | `phylo-builder` |
 | FMT | Formats bio standards (FASTQ, SAM/BAM, VCF) | Biologie computationnelle | Essentielle | `sequence-aligner` (partial — FASTA uniquement) |
 | RNA | Structure secondaire ARN | Biologie computationnelle | Moyenne | — |
 | HMM | Modèles de Markov cachés | Probabiliste & Stats | Haute | — |
 | MST | Matrices de substitution (BLOSUM, PAM) | Probabiliste & Stats | Haute | `sequence-aligner` |
-| STA | Statistiques sur séquences (p-value, PWM) | Probabiliste & Stats | Haute | `sequence-aligner` (partial — GC content, benchmarking) |
+| STA | Statistiques sur séquences (p-value, PWM) | Probabiliste & Stats | Haute | `sequence-aligner` (partial — GC content, benchmarking) · `phylo-builder` (bootstrap, modèles évolutifs) |
 | ENC | Encodage de séquences (one-hot, k-mer) | Deep Learning | Essentielle | — |
 | CNN | Réseaux convolutifs 1D | Deep Learning | Haute | — |
 | RNN | Réseaux récurrents / LSTM | Deep Learning | Haute | — |
