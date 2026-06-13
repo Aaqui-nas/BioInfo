@@ -1,0 +1,31 @@
+# Template pour projets algorithmiques / bioinformatique sans deep learning
+# Usage : copier dans nom-projet/, renommer en pyproject.toml, adapter name/description
+#         puis : uv sync
+
+[project]
+name = "sequence-aligner"
+version = "0.1.0"
+description = "Sequence aligner"
+requires-python = ">=3.11"
+dependencies = [
+    "biopython>=1.83",
+    "numpy>=1.26",
+    "matplotlib>=3.8",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.4",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["subjects"]
+python_files = ["test_*.py"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

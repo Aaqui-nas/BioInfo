@@ -96,7 +96,9 @@ graph LR
     classDef covered fill:#4caf50,stroke:#388e3c,color:#fff
     classDef partial fill:#ff9800,stroke:#f57c00,color:#fff
 
-    class PD,SC,GR,HEU,ALI,MOT,ASS,ANN,PHY,FMT,RNA,HMM,MST,STA,ENC,CNN,RNN,TRF,SSL,CPP,CMP,PAR,BIO_BASE,SWE unset
+    class PD,ALI,MST covered
+    class FMT,BIO_BASE,STA partial
+    class SC,GR,HEU,MOT,ASS,ANN,PHY,RNA,HMM,ENC,CNN,RNN,TRF,SSL,CPP,CMP,PAR,SWE unset
 ```
 
 ---
@@ -105,22 +107,22 @@ graph LR
 
 | ID | Compétence | Domaine | Priorité | Projet(s) |
 |----|-----------|---------|----------|-----------|
-| BIO_BASE | Biologie fondamentale (ADN/ARN, dogme central, séquençage) | Fondamentaux | Essentielle | — |
+| BIO_BASE | Biologie fondamentale (ADN/ARN, dogme central, séquençage) | Fondamentaux | Essentielle | `sequence-aligner` (partial) |
 | SWE | Ingénierie logicielle (typage, tests, API design, modules) | Systèmes & Performance | Haute | — |
-| PD | Programmation dynamique | Algorithmique | Essentielle | — |
+| PD | Programmation dynamique | Algorithmique | Essentielle | `sequence-aligner` |
 | SC | Structures de données sur chaînes (suffix array, BWT) | Algorithmique | Haute | — |
 | GR | Théorie des graphes (De Bruijn, overlap) | Algorithmique | Haute | — |
 | HEU | Heuristiques & approximation (BLAST-like) | Algorithmique | Moyenne | — |
-| ALI | Alignement de séquences | Biologie computationnelle | Essentielle | — |
+| ALI | Alignement de séquences | Biologie computationnelle | Essentielle | `sequence-aligner` |
 | MOT | Recherche de motifs biologiques | Biologie computationnelle | Haute | — |
 | ASS | Assemblage de génomes | Biologie computationnelle | Haute | — |
 | ANN | Annotation génomique | Biologie computationnelle | Moyenne | — |
 | PHY | Phylogénétique computationnelle | Biologie computationnelle | Moyenne | — |
-| FMT | Formats bio standards (FASTQ, SAM/BAM, VCF) | Biologie computationnelle | Essentielle | — |
+| FMT | Formats bio standards (FASTQ, SAM/BAM, VCF) | Biologie computationnelle | Essentielle | `sequence-aligner` (partial — FASTA uniquement) |
 | RNA | Structure secondaire ARN | Biologie computationnelle | Moyenne | — |
 | HMM | Modèles de Markov cachés | Probabiliste & Stats | Haute | — |
-| MST | Matrices de substitution (BLOSUM, PAM) | Probabiliste & Stats | Haute | — |
-| STA | Statistiques sur séquences (p-value, PWM) | Probabiliste & Stats | Haute | — |
+| MST | Matrices de substitution (BLOSUM, PAM) | Probabiliste & Stats | Haute | `sequence-aligner` |
+| STA | Statistiques sur séquences (p-value, PWM) | Probabiliste & Stats | Haute | `sequence-aligner` (partial — GC content, benchmarking) |
 | ENC | Encodage de séquences (one-hot, k-mer) | Deep Learning | Essentielle | — |
 | CNN | Réseaux convolutifs 1D | Deep Learning | Haute | — |
 | RNN | Réseaux récurrents / LSTM | Deep Learning | Haute | — |

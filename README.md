@@ -10,7 +10,7 @@ Portfolio de bioinformatique construit sur l'année 2026. Objectif : préparer u
 
 | # | Nom | Technos | Thème | Statut |
 |---|-----|---------|-------|--------|
-| — | *aucun projet lancé* | — | — | — |
+| 1 | [Aligneur de séquences](sequence-aligner/) | Python | Alignement pairwise ADN (NW, SW, BLOSUM, gaps affines) | En cours |
 
 ---
 
@@ -20,7 +20,7 @@ Portfolio de bioinformatique construit sur l'année 2026. Objectif : préparer u
 
 | Phase | Période | Projet | Orientation | Compétences clés |
 |-------|---------|--------|-------------|-----------------|
-| 1 | — | *(à définir)* | Algorithmique | — |
+| 1 | 2026 | [Aligneur de séquences](sequence-aligner/) | Algorithmique | PD, ALI, MST |
 | 2 | — | *(à définir)* | Algorithmique / Stats | — |
 | 3 | — | *(à définir)* | Deep Learning | — |
 | 4 | — | *(à définir)* | Intégrateur | — |
