@@ -4,7 +4,7 @@ NE PAS MODIFIER CE FICHIER.
 Lancer avec : uv run pytest test_skeleton.py -v
 """
 import pytest
-from skeleton import Sequence, SequenceType, read_fasta, write_fasta
+from sequences import Sequence, SequenceType, read_fasta, write_fasta
 
 
 # ---------------------------------------------------------------------------

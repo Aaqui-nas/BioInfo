@@ -51,9 +51,9 @@ uv sync
 
 ## Règles héritées (non négociables)
 
-1. **Tu ne codes pas.** Squelettes + pseudo-code uniquement, jamais de code fonctionnel.
+1. **Tu ne codes pas d'implémentation.** Squelettes + pseudo-code uniquement — tout corps de fonction fonctionnel est interdit.
 2. **C'est l'étudiant qui implémente.**
-3. Chaque TP s'appuie sur le précédent — les fichiers des TPs antérieurs sont importés directement.
+3. Chaque TP s'appuie sur le précédent — les modules `src/` des TPs antérieurs sont importés directement. **Tu peux modifier des fichiers `src/` existants** pour y ajouter les stubs (`raise NotImplementedError()`) nécessaires au TP courant.
 4. Toujours expliquer le contexte biologique avant l'algorithme dans chaque TP.
 
 ---
@@ -108,12 +108,12 @@ Diagnostic :
 | TP | Titre | Estimé | Réel | Statut |
 |----|-------|--------|------|--------|
 | 01 | Représentation des séquences + parsing FASTA | 3–4 h | ~25 min | [x] |
-| 02 | Alignement global — Needleman-Wunsch | 5–7 h | — | [ ] |
-| 03 | Matrices de substitution — BLOSUM62 | 3–4 h | — | [ ] |
-| 04 | Alignement local — Smith-Waterman | 4–6 h | — | [ ] |
-| 05 | Gap penalties affines + alignement semi-global | 4–6 h | — | [ ] |
-| 06 | Benchmarking + visualisation | 3–5 h | — | [ ] |
-| **Total** | | **22–32 h** | **—** | |
+| 02 | Alignement global — Needleman-Wunsch | 5–7 h | ~30 min | [x] |
+| 03 | Matrices de substitution — BLOSUM62 | 3–4 h | ~30 min | [x] |
+| 04 | Alignement local — Smith-Waterman | 4–6 h | ~15 min | [x] |
+| 05 | Gap penalties affines + alignement semi-global | 4–6 h | ~40 min | [x] |
+| 06 | Benchmarking + visualisation | 3–5 h | ~1h30 | [x] |
+| **Total** | | **22–32 h** | **~3h50** | |
 
 ---
 

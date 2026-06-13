@@ -125,6 +125,10 @@ class Sequence:
     def header(self) -> str:
         return self._header
 
+    def __getitem__(self, key):
+        return self._data[key]
+
+
 def read_fasta(filepath: str) -> list[Sequence]:
     """
     Lit un fichier FASTA et retourne la liste des séquences dans l'ordre du fichier.

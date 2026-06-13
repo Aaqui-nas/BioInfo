@@ -121,6 +121,26 @@ Progression des modules :
 
 ---
 
+### 12. Aligneur de séquences avancé *(suite de sequence-aligner)*
+**Orientation :** algorithmique
+**Difficulté :** ⭐⭐⭐
+**Technos suggérées :** Python (+ C++ optionnel pour les parties performance)
+**Description :** Approfondir le projet `sequence-aligner` en implémentant tout ce qui était marqué "pour aller plus loin". Ce projet suppose que NW, SW et Gotoh sont déjà maîtrisés — il travaille sur la performance, la complétude et l'heuristique.
+
+Progression des modules :
+1. **Formats étendus** — FASTQ avec scores Phred, codes IUPAC ambigus (N, R, Y, S…), matrice NUC44 officielle NCBI
+2. **Complexité de séquence** — ratio LZ pour détecter les régions répétées (low-complexity masking)
+3. **Optimisation espace** — algorithme de Hirschberg (O(min(m,n)) espace, même complexité temporelle que NW) ; adaptation aux 3 matrices affines (Gotoh + Hirschberg)
+4. **Distance d'édition** — variante Levenshtein de la matrice NW (min + signes inversés), comparaison avec NW classique
+5. **SW banded** — Smith-Waterman en bande (O(k×n) espace) quand on connaît à l'avance la divergence maximale k
+6. **Tous les alignements locaux** — retourner tous les alignements locaux de score ≥ seuil, pas seulement le meilleur
+7. **Heuristique BLAST-like** — seed-and-extend : trouver les k-mers exacts communs, étendre localement, filtrer par score — première approche sub-quadratique
+8. **Construction de matrice de substitution** — reproduire la démarche BLOSUM depuis un alignement multiple existant (compter les paires observées vs attendues)
+
+**Compétences visées :** optimisation mémoire (Hirschberg), distance d'édition, heuristiques d'alignement (BLAST), formats bio étendus (FASTQ, IUPAC), construction de matrices de substitution.
+
+---
+
 ## Idées en vrac (à développer)
 
 - Clustering de métagénomes (k-mer frequency + UMAP/t-SNE)

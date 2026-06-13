@@ -5,7 +5,7 @@
 **Compétences travaillées :** [IDs SKILLS.md, ex : PD, ALI]
 **Durée estimée :** [X–Y heures]
 **Durée réelle :** *à remplir*
-**Fichier(s) squelette :** `skeleton.[ext]`
+**Fichier(s) à implémenter :** `src/[nom_module].[ext]`
 
 ---
 
@@ -63,13 +63,13 @@ FIN ALGORITHME
 
 ---
 
-## Fichiers squelettes
+## Fichiers
 
 | Fichier | Rôle |
 |---------|------|
-| `skeleton.[ext]` | [fonctions à implémenter] |
-| `test_[nom].py` | [cas de tests à faire passer — ne pas modifier] |
-| `data/[fichier]` | [données de test fournies] |
+| `src/[nom_module].[ext]` | [fonctions à implémenter] |
+| `tests/test_[nom_module].py` | [cas de tests à faire passer — ne pas modifier] |
+| `data/[fichier]` | [données de test fournies — à la racine du projet] |
 
 ---
 
@@ -77,6 +77,7 @@ FIN ALGORITHME
 
 Cocher chaque case avant de dire **"TP validé"** :
 
+- [ ] `uv run pytest tests/test_[nom_module].py -v` passe sans erreur
 - [ ] Le code produit le bon output sur l'exemple ci-dessus
 - [ ] Le code gère correctement les cas limites : [les lister]
 - [ ] Je peux expliquer pourquoi l'algorithme est **correct** (pas juste qu'il tourne)

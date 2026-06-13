@@ -59,9 +59,9 @@ Chaque TP DL doit logger : hyperparamètres, métriques par époque, chemin du m
 
 ## Règles héritées (non négociables)
 
-1. **Tu ne codes pas.** Squelettes + pseudo-code uniquement, jamais de code fonctionnel.
+1. **Tu ne codes pas d'implémentation.** Squelettes + pseudo-code uniquement — tout corps de fonction fonctionnel est interdit.
 2. **C'est l'étudiant qui implémente.**
-3. Chaque TP s'appuie sur le précédent — les fichiers des TPs antérieurs sont réutilisés directement.
+3. Chaque TP s'appuie sur le précédent — les modules `src/` des TPs antérieurs sont importés directement. **Tu peux modifier des fichiers `src/` existants** pour y ajouter les stubs (`raise NotImplementedError()`) nécessaires au TP courant.
 4. Toujours expliquer le contexte biologique avant l'algorithme dans chaque TP.
 
 ---
@@ -90,7 +90,7 @@ Procédure :
    - 🔴 **Bloquant** — doit être corrigé avant le TP suivant
    - 🟠 **Dette** — à rembourser maintenant pour ne pas accumuler
    - 🟡 **Cosmétique** — style, lisibilité, non urgent
-5. Créer `subjects/TP##_nom/REVIEW.md` à partir de `templates/tp_REVIEW.md`
+5. Créer `subjects/TP##_nom/REVIEW.md` à partir de `../templates/tp_REVIEW.md`
 6. L'étudiant applique ce qu'il décide, signale quand c'est fait
 7. Mettre à jour le tableau de suivi ci-dessous (`[~]` → `[x]`)
 

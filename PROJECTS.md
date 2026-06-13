@@ -2,7 +2,7 @@
 
 | # | Nom | Dossier | Technos | Description | TPs total | TP en cours | Temps estimé | Temps réel | Dépend de | Statut |
 |---|-----|---------|---------|-------------|-----------|-------------|-------------|------------|-----------|--------|
-| 1 | Aligneur de séquences | `sequence-aligner/` | Python | Alignement pairwise ADN : NW, SW, BLOSUM, gaps affines | 6 | TP01 | 22–32 h | — | aucun | En cours |
+| 1 | Aligneur de séquences | `sequence-aligner/` | Python | Alignement pairwise ADN : NW, SW, BLOSUM, gaps affines | 6 | TP06 | 22–32 h | ~3h50 | aucun | Terminé |
 
 ---
 

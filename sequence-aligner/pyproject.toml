@@ -20,7 +20,8 @@ dev = [
 ]
 
 [tool.pytest.ini_options]
-testpaths = ["subjects"]
+testpaths = ["tests"]
+pythonpath = ["src"]
 python_files = ["test_*.py"]
 
 [tool.ruff]

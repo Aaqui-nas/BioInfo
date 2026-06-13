@@ -5,7 +5,7 @@
 **Compétences travaillées :** BIO_BASE, FMT
 **Durée estimée :** 3–4 heures
 **Durée réelle :** *à remplir*
-**Fichiers squelettes :** `skeleton.py`
+**Fichier à implémenter :** `src/sequences.py`
 
 ---
 
@@ -162,12 +162,12 @@ FIN ALGORITHME
 
 ---
 
-## Fichiers squelettes
+## Fichiers
 
 | Fichier | Rôle |
 |---------|------|
-| `skeleton.py` | Classes `Sequence`, `SequenceType` + fonctions `read_fasta`, `write_fasta` |
-| `test_skeleton.py` | Tests à faire passer — **ne pas modifier** |
+| `src/sequences.py` | Classes `Sequence`, `SequenceType` + fonctions `read_fasta`, `write_fasta` |
+| `tests/test_sequences.py` | Tests à faire passer — **ne pas modifier** |
 | `data/example.fasta` | Fichier FASTA d'exemple avec 4 séquences |
 
 ---
@@ -176,11 +176,11 @@ FIN ALGORITHME
 
 Cocher chaque case avant de dire **"TP validé"** :
 
-- [ ] `uv run pytest test_skeleton.py -v` passe sans erreur
+- [ ] `uv run pytest tests/test_sequences.py -v` passe sans erreur
 - [ ] Le code gère les cas limites : fichier vide, séquence multi-lignes, fichier inexistant
 - [ ] Je peux expliquer pourquoi le reverse complement se calcule en deux étapes
 - [ ] Je connais la complexité temporelle et spatiale de chaque méthode
-- [ ] Je peux lire `data/example.fasta` et afficher le GC content de chaque séquence
+- [ ] Je peux lire `data/example.fasta` (à la racine du projet) et afficher le GC content de chaque séquence
 
 ---
 

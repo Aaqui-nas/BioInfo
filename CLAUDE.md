@@ -10,12 +10,12 @@ Chaque projet est un sous-dossier autonome avec son propre `CLAUDE.md`. **Ouvre 
 
 ## Règles absolues (valables dans tous les projets)
 
-1. **Tu ne codes pas.** Tu fournis uniquement :
-   - Des fichiers squelettes avec signatures de fonctions/classes
+1. **Tu ne codes pas d'implémentation.** Tu fournis uniquement :
+   - Des fichiers squelettes (nouveaux ou mis à jour) avec signatures de fonctions/classes et `raise NotImplementedError()`
    - Des algorithmes en pseudo-code commenté
    - Des instructions de TP claires et progressives
-2. **C'est l'auteur qui implémente.**
-3. Chaque TP est itératif : il s'appuie sur le précédent et ajoute des fonctionnalités.
+2. **C'est l'auteur qui implémente.** Tout corps de fonction fonctionnel est interdit — même en réponse à une question directe.
+3. Chaque TP est itératif : il s'appuie sur le précédent et ajoute des fonctionnalités. **Tu peux modifier des fichiers `src/` existants** pour y ajouter de nouvelles signatures (stubs) nécessaires au TP courant.
 4. Chaque projet démarre avec une `ROADMAP.md` qui décrit tous les TPs prévus.
 
 ---
@@ -26,11 +26,10 @@ Chaque projet est un sous-dossier autonome avec son propre `CLAUDE.md`. **Ouvre 
 |---------|-----------|---------|
 | Dossier de projet | `kebab-case` | `sequence-aligner`, `bio-seq-kit` |
 | Dossier de TP | `TP##_snake_case` | `TP01_global_alignment`, `TP03_de_bruijn` |
-| Fichiers Python | `snake_case.py` | `alignment.py`, `test_alignment.py` |
-| Fichier squelette | `skeleton.py` / `skeleton.cpp` | — |
-| Fichiers de test | `test_[module].py` | `test_needleman.py` |
-| Fichiers C++ | `snake_case.cpp` / `.hpp` | `smith_waterman.cpp` |
-| Review de TP | `REVIEW.md` (majuscules) | dans `TP01_global_alignment/` |
+| Modules Python (`src/`) | `snake_case.py` — nom sémantique | `sequences.py`, `needleman_wunsch.py` |
+| Fichiers de test (`tests/`) | `test_[module].py` | `test_sequences.py`, `test_needleman_wunsch.py` |
+| Fichiers C++ (`src/`) | `snake_case.cpp` / `.hpp` | `smith_waterman.cpp` |
+| Review de TP | `REVIEW.md` (majuscules) | dans `subjects/TP01_global_alignment/` |
 
 Règle sur les numéros de TP : toujours sur 2 chiffres (`TP01`, `TP09`, `TP10`).
 
@@ -109,16 +108,35 @@ Déclenché quand l'auteur dit : **"TP validé"** (ou formulation équivalente).
 
 ```
 bioinfo/
-└── nom_projet/
+└── nom-projet/
     ├── CLAUDE.md          ← instructions adaptées au projet
     ├── ROADMAP.md         ← liste des TPs et leur progression
-    └── subjects/
+    ├── pyproject.toml
+    ├── src/               ← modules Python, nommés sémantiquement, communs à tous les TPs
+    │   ├── sequences.py       (ex : TP01)
+    │   └── needleman_wunsch.py (ex : TP02, importe sequences.py)
+    ├── tests/             ← tous les tests, un fichier par module
+    │   ├── test_sequences.py
+    │   └── test_needleman_wunsch.py
+    ├── data/              ← données partagées (FASTA, CSV…)
+    │   └── example.fasta
+    └── subjects/          ← énoncés uniquement, pas de code
         ├── TP01_nom/
         │   ├── README.md      ← énoncé + objectifs + pseudo-code
-        │   └── skeleton.*     ← fichier(s) squelette à remplir
-        ├── TP02_nom/
-        │   └── ...
-        └── ...
+        │   └── REVIEW.md      ← compte-rendu de review (créé après validation)
+        └── TP02_nom/
+            └── README.md
+```
+
+**Règle de nommage des modules `src/` :** le nom décrit ce que contient le fichier, pas le numéro du TP. TP01 qui implémente `Sequence` et le parsing FASTA → `sequences.py`. TP02 qui implémente Needleman-Wunsch → `needleman_wunsch.py`. Chaque nouveau TP ajoute un fichier dans `src/` (ou modifie un existant pour y ajouter des stubs) et un fichier dans `tests/`.
+
+**Sous-dossiers dans `src/` :** si le projet grandit et que regrouper par thème améliore la lisibilité, créer des sous-dossiers sémantiques. Exemples : `src/alignment/`, `src/io/`, `src/scoring/`. Ajouter un `__init__.py` vide dans chaque sous-dossier pour que Python les traite comme des packages. Les imports dans les tests deviennent alors `from alignment.needleman_wunsch import ...`.
+
+**pyproject.toml — configuration pytest :**
+```toml
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
 ```
 
 ---
@@ -131,7 +149,10 @@ bioinfo/
    - Le dossier `nom-projet/` (kebab-case)
    - `CLAUDE.md` à partir de `templates/project_CLAUDE.md` (remplir toutes les sections)
    - `ROADMAP.md` avec tous les TPs planifiés
-   - `subjects/TP01_nom/README.md` à partir de `templates/tp_README.md` + squelette du premier TP
+   - `subjects/TP01_nom/README.md` à partir de `templates/tp_README.md`
+   - `src/[nom_module].py` — squelette du premier TP avec nom sémantique
+   - `tests/test_[nom_module].py` — tests du premier TP
+   - `data/` — répertoire vide ou avec données d'exemple si nécessaire
 4. Tu mets à jour `PROJECTS.md` avec le nouveau projet
 5. Tu mets à jour la table **Roadmap globale** dans `README.md`
 6. Tu mets à jour `SKILLS.md` :
@@ -208,3 +229,4 @@ Quand tous les TPs d'un projet sont validés :
 1. L'étudiant (ou Claude en mode review final) rédige `SYNTHESIS.md` dans le dossier projet : ce qui a été construit, ce qui a bien marché, ce qui aurait pu être mieux conçu dès le départ
 2. Mettre à jour `PROJECTS.md` : statut → `Terminé`, remplir le nombre de TPs complétés
 3. Vérifier `SKILLS.md` : toutes les compétences du projet sont bien en `covered`
+4. **Proposer un projet avancé dans `IDEAS.md`** : collecter toutes les sections "Pour aller plus loin" des TPs du projet clôturé, en faire une idée de projet qui reprend la même thématique en les implémentant. Difficulté suggérée : celle du projet de base + 1 étoile.
